@@ -6,7 +6,7 @@ pragma solidity ^0.8.24;
 import "forge-std/interfaces/IERC721.sol";
 import "forge-std/console.sol";
 
-contract AuctionContract
+contract Auction
 {   
     struct Auction{
     address seller;
@@ -32,7 +32,7 @@ constructor(address _tokenNFT)
    tokenNFT=IERC721(_tokenNFT);
 }
 
- function setendDate(uint256 auctionId,uint256 auctionendDate) public OnlySeller(auctionId) {
+ function setEndDate(uint256 auctionId,uint256 auctionendDate) public OnlySeller(auctionId) {
     require (AuctionList[auctionId].auctionendDate<auctionendDate);
     AuctionList[auctionId].auctionendDate=auctionendDate;
  }
