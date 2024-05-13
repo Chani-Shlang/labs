@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.24;
 
-import {AuctionContract} from  "./AuctionContract.sol"; 
+import {AuctionContract} from  "./auctionContract.sol"; 
 import{Test,console} from "forge-std/Test.sol";
 import{MyERC721} from "./MyERC721.sol";
 
