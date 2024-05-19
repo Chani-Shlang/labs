@@ -14,7 +14,6 @@ receive() external payable{}
 
 function setUp() public{
     tokenNFT=new MyERC721();
-   // tokenNFT=IERC20(address);
     auction=new Auction(address(tokenNFT));
 
 }
