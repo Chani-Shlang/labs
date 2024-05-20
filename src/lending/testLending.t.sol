@@ -22,7 +22,7 @@ function setUp() public
  lending=new Lending(address(dai));
  
 }    
-
+receive() external payable{}
 function testLending() public
 {   
     dai.mint(address(this),100);
@@ -33,5 +33,10 @@ function testLending() public
     lending.deposite(100);
     console.log(dai.balanceOf(address(lending)));
    
+    lending.getBorrow{value:100}(70);
+    console.log(dai.balanceOf(address(this)));
+    lending.removeCollateral(5);
+    lending.withdraw(20);
+
 }
 }

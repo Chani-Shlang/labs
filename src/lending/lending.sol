@@ -63,7 +63,8 @@ function deposite(uint256 amountofdai) public
 function withdraw(uint256 amountofdai) public
 {
     require(amountofdai<=lenders[msg.sender].amount,"Not enough DAI to withdraw");
-
+    require(dai.balanceOf(address(this))>=amountofdai,"Not enough DAI at contract");
+    dai.approve(address(this),amountofdai);
     dai.transferFrom(address(this),msg.sender,amountofdai);
     bondToken.burn(msg.sender,amountofdai);
     lenders[msg.sender].amount-=amountofdai;
@@ -80,7 +81,9 @@ function addCollateral() public payable
 
 function removeCollateral(uint256 amount) public
 {
- require(getPrecent(borrowers[msg.sender].collateral-amount,maxLTV)>=borrowers[msg.sender].amount,"Not enough collateral to remove them");
+ require(amount<=borrowers[msg.sender].collateral,'You can not remove collateral more then you put down');
+ require(borrowers[msg.sender].amount<=getPrecent(borrowers[msg.sender].collateral-amount,maxLTV),"Not enough collateral to remove them");
+ //require(getPrecent(borrowers[msg.sender].collateral-amount,maxLTV)>=borrowers[msg.sender].amount-amount,"Not enough collateral to remove them");
  borrowers[msg.sender].collateral-=amount;
  payable(msg.sender).transfer(amount);
 }
@@ -101,6 +104,7 @@ function getBorrow (uint256 amountofborrow) payable public
 
     require(getPrecent(borrowers[msg.sender].collateral,maxLTV)*getEthInDai()>=borrowers[msg.sender].amount,"Not enouge collaterals to get borrow")  ; 
     //uint amountNeto=amountofborrow-amountofborrow*fee;
+    dai.approve(address(this),amountofborrow);
     dai.transferFrom(address(this),msg.sender,amountofborrow);
     
     
