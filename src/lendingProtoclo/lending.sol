@@ -7,8 +7,8 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@chainlink/contracts/v0.8/interfaces/AggregatorV3Interface.sol";
 
-import "./interfaces/ISwapRouter.sol";
-import "./Math.sol";
+import "./ISwapRouter.sol";
+import "./innerMath.sol";
 
 interface ILendingPool {
     function deposit(
@@ -43,8 +43,8 @@ interface IUniswapRouter is ISwapRouter {
     function refundETH() external payable;
 }
 
-contract BondToken is ERC20Burnable, Ownable, Math {
-    using SafeMath for uint256;
+contract BondToken is ERC20Burnable, Ownable, innerMath {
+    using Math for uint256;
 
     uint256 public totalBorrowed;
     uint256 public totalReserve;
@@ -162,8 +162,8 @@ contract BondToken is ERC20Burnable, Ownable, Math {
         if (totalSupply() == 0) {
             return 1000000000000000000;
         }
-        uint256 cash = getCash();
-        uint256 num = cash.add(totalBorrowed).add(totalReserve);
+        //uint256 cash = getCash();
+        uint256 num = add(totalBorrowed).add(totalReserve);
         return getExp(num, totalSupply());
     }
 
@@ -290,4 +290,3 @@ contract BondToken is ERC20Burnable, Ownable, Math {
 
     fallback() external payable {}
 }
-view rawBondToken.sol hosted with ❤ by GitHub
