@@ -1,0 +1,28 @@
+{
+    "CLI_version": "7.6.3",
+    "branch": "master",
+    "certora_ci_client": null,
+    "conf": {
+        "files": [
+            "Empty.sol"
+        ],
+        "process": "emv",
+        "solc": "solc",
+        "verify": "Empty:sisters.spec"
+    },
+    "conf_path": null,
+    "cwd_relative": "task",
+    "dirty": false,
+    "main_spec": "sisters.spec",
+    "origin": "https://github.com/Chani-Shlang/labs.git",
+    "raw_args": [
+        "/home/user/.local/bin/certoraRun",
+        "Empty.sol",
+        "--verify",
+        "Empty:sisters.spec",
+        "--solc",
+        "solc"
+    ],
+    "revision": "674070beaff0882a749a6bdc1cec8688fa169f83",
+    "timestamp": "1716179564.938783"
+}

@@ -37,6 +37,7 @@ function testLending() public
     console.log(dai.balanceOf(address(this)));
     lending.removeCollateral(5);
     lending.withdraw(20);
+    
 
 }
 }

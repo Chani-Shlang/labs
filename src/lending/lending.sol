@@ -126,8 +126,8 @@ function checkLiquidation() public onlyOwner{
       if(((borrowers[listBorrowers[i]].amount*getEthInDai())/borrowers[listBorrowers[i]].collateral)*100>maxLQ)
        
        
-       { uint256 collateralDiff=borrowers[listBorrowers[i]].collateral-(borrowers[listBorrowers[i]].collateral)*maxLQ;
-  
+       { uint256 
+         collateralDiff=borrowers[listBorrowers[i]].collateral-(borrowers[listBorrowers[i]].collateral)*maxLQ;
          harvestRewards(collateralDiff);         
          borrowers[listBorrowers[i]].collateral=0;
        } 

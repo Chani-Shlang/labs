@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Empty",
+    "specfile": "/home/user/labs/task/sisters.spec",
+    "specfileOrigRelpath": "sisters.spec",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}
