@@ -59,21 +59,22 @@ contract lendingProtocol is  Ownable(msg.sender),WMath {
     BondToken  public bondToken;
 
     ILendingPool public constant aave =
-        ILendingPool(0xE0fBa4Fc209b4948668006B2bE61711b7f465bAe);
+        ILendingPool(0x56Ab717d882F7A8d4a3C2b191707322c5Cc70db8);
     IWETHGateway public constant wethGateway =
         IWETHGateway(0xA61ca04DF33B72b235a8A28CfB535bb7A5271B70);
     IERC20 public constant dai =
-        IERC20(0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD);
+        IERC20(0x77FDe93fEe5fe272dC17d799cb61447431E6Eba2);
     IERC20 public constant aDai =
-        IERC20(0xdCf0aF9e59C002FA3AA091a46196b37530FD48a8);
+        IERC20(0x2B101eFBB4dFf1fbB8f87f02C560Fb8AC773aFC5);
     IERC20 public constant aWeth =
-        IERC20(0x87b1f4cf9BD63f7BBD3eE1aD04E8F52540349347);
+        IERC20(0x0e426e6e6B226D8bd566e417b90411Dcf14DF861);
     AggregatorV3Interface internal constant priceFeed =
         AggregatorV3Interface(0x9326BFA02ADD2366b30bacB125260Af641031331);
     IUniswapRouter public constant uniswapRouter =
         IUniswapRouter(0xE592427A0AEce92De3Edee1F18E0157C05861564);
     IERC20 private constant weth =
-        IERC20(0xd0A1E359811322d97991E03f863a0C30C2cF029C);
+        IERC20(@0xc8c0Cf9436F4862a8F60Ce680Ca5a9f0f99b5ded);
+
 
     mapping(address => uint256) private usersCollateral;
     mapping(address => uint256) private usersBorrowed;
