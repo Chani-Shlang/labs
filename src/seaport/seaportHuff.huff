@@ -1,0 +1,55 @@
+#define macro MAIN() = takes(0) returns(0) {
+    // store dynamic offset of 0x20 at 0x00
+    0x20                                     // PUSH1      [0x20]
+    0x00                                     // PUSH1      [0x00, 0x20]                                   
+    PUSH1 0x80
+    PUSH1 0x40
+    MSTORE
+    CALLVALUE
+    DUP1
+    ISZERO
+    PUSH1 0x0f
+    JUMPI
+    PUSH1 0x00
+    DUP1
+    REVERT
+    JUMPDEST
+    POP
+    PUSH1 0x3e
+    DUP1
+    PUSH1 0x1d
+    PUSH1 0x00
+    CODECOPY
+    PUSH1 0x00
+    RETURN
+    INVALID
+    PUSH1 0x80
+    PUSH1 0x40
+    MSTORE
+    PUSH1 0x00
+    DUP1
+    REVERT
+    INVALID
+    LOG2
+    PUSH6 0x627a7a723158
+    KECCAK256
+    LOG1
+    CALLDATALOAD
+    INVALID
+    STATICCALL
+    BLOCKHASH
+    DUP16
+    INVALID
+    INVALID
+    INVALID
+    LOG4
+    INVALID
+    INVALID
+    SWAP16
+    INVALID
+    isZERO
+    PUSH25 0xf0b6dbe7f4be7b9d9fa664a5f265d91364736f6c6343000510
+    STOP
+    ORIGIN
+
+}

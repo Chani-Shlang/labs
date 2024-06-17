@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "ERC20",
+    "specfile": "/home/user/Documents/labs/src/erc20/ERC20.spec",
+    "specfileOrigRelpath": "ERC20.spec",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

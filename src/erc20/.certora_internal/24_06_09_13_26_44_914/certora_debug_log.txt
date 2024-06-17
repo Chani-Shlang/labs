@@ -1,0 +1,39 @@
+Saving last configuration file to .certora_internal/24_06_09_13_26_44_914/run.conf
+There is no TAC file. Going to script EVMVerifier/certoraBuild.py to main_with_args()
+Creating dir /home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_26_44_914/.certora_config
+In /home/user/Documents/labs/src/erc20/ERC20.spec, found the imports: []
+copying spec file /home/user/Documents/labs/src/erc20/ERC20.spec to /home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_26_44_914/.certora_sources/.0_ERC20.spec.spec
+writing /home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_26_44_914/.certora_verify.json
+Path to typechecker is /home/user/.local/lib/python3.10/site-packages/certora_jars/Typechecker.jar
+running ['java', '-jar', '/home/user/.local/lib/python3.10/site-packages/certora_jars/Typechecker.jar', '-buildDirectory', '/home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_26_44_914']
+
+building file ERC20.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/24_06_09_13_26_44_914/.certora_config/version_check_solc.stdout, .certora_internal/24_06_09_13_26_44_914/.certora_config/version_check_solc.stderr
+build failed
+Failure traceback: 
+Traceback (most recent call last):
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/certoraRun.py", line 145, in run_certora
+    build(context, ignore_spec_syntax_check=is_library)
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/certoraBuild.py", line 3600, in build
+    raise e
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/certoraBuild.py", line 3567, in build
+    cache_hit, build_cache_enabled, cached_files = build_from_cache_or_scratch(context,
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/certoraBuild.py", line 3499, in build_from_cache_or_scratch
+    cached_files = build_from_scratch(certora_build_generator,
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/certoraBuild.py", line 3432, in build_from_scratch
+    certora_build_generator.build(certora_verify_generator)
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/certoraBuild.py", line 2700, in build
+    sdc_pre_finders = self.collect_for_file(build_arg_contract_file, i, compiler_lang, Path(os.getcwd()),
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/certoraBuild.py", line 1909, in collect_for_file
+    .get_compiler_collector(Path(path_for_compiler_collector_file))
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/Compiler/CompilerCollectorFactory.py", line 74, in get_compiler_collector
+    version = self.__get_solc_version(path)
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/Compiler/CompilerCollectorFactory.py", line 117, in __get_solc_version
+    version = self.__get_compiler_exe_version(solc_path, self.__version_string_handler_solc)
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/EVMVerifier/Compiler/CompilerCollectorFactory.py", line 133, in __get_compiler_exe_version
+    run_compiler_cmd(
+  File "/home/user/.local/lib/python3.10/site-packages/certora_cli/Shared/certoraUtils.py", line 1099, in run_compiler_cmd
+    raise Exception(msg)
+Exception: Failed to run solc --version, exit code 1
+Encountered an error running Certora Prover, please contact Certora

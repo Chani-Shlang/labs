@@ -1,0 +1,27 @@
+{
+    "CLI_version": "7.6.3",
+    "branch": "master",
+    "certora_ci_client": null,
+    "conf": {
+        "debug": true,
+        "files": [
+            "./ERC20.sol"
+        ],
+        "process": "emv",
+        "verify": "ERC20:ERC20.spec"
+    },
+    "conf_path": null,
+    "cwd_relative": "src/erc20",
+    "dirty": true,
+    "main_spec": "ERC20.spec",
+    "origin": "https://github.com/Chani-Shlang/labs.git",
+    "raw_args": [
+        "/home/user/.local/bin/certoraRun",
+        "./ERC20.sol",
+        "--verify",
+        "ERC20:ERC20.spec",
+        "--debug"
+    ],
+    "revision": "c67810a5831e0f7719d9a77502266dae9806216f",
+    "timestamp": "1717917607.34594"
+}

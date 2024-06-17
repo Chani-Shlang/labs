@@ -1,0 +1,16 @@
+Saving last configuration file to .certora_internal/24_06_09_13_32_37_146/run.conf
+There is no TAC file. Going to script EVMVerifier/certoraBuild.py to main_with_args()
+Creating dir /home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_32_37_146/.certora_config
+In /home/user/Documents/labs/src/erc20/ERC20.spec, found the imports: []
+copying spec file /home/user/Documents/labs/src/erc20/ERC20.spec to /home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_32_37_146/.certora_sources/.0_ERC20.spec.spec
+writing /home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_32_37_146/.certora_verify.json
+Path to typechecker is /home/user/.local/lib/python3.10/site-packages/certora_jars/Typechecker.jar
+running ['java', '-jar', '/home/user/.local/lib/python3.10/site-packages/certora_jars/Typechecker.jar', '-buildDirectory', '/home/user/Documents/labs/src/erc20/.certora_internal/24_06_09_13_32_37_146']
+
+building file ERC20.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/24_06_09_13_32_37_146/.certora_config/version_check_solc.stdout, .certora_internal/24_06_09_13_32_37_146/.certora_config/version_check_solc.stderr
+build failed
+Failure traceback: 
+Exception: Failed to run solc --version, exit code 1
+Encountered an error running Certora Prover, please contact Certora; consider running the script again with --debug to find out why it failed
