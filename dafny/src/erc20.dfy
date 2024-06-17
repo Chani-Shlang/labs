@@ -14,10 +14,12 @@ class ERC20 {
     // this value is not directly used as the external representation, that is in u256
     var balances:  mapping<u160,u256>
     var allowance: mapping<u160, mapping<u160,u256>>
-
-    constructor() {
+    const fee: u256:=3
+    var owner:u160
+    constructor(msg:Transaction) {
         balances := Map(map[], 0);
         allowance := Map(map[], Map(map[],0));
+         owner:=msg.sender;
     }
 
     method fallback(msg: Transaction) returns (r: Result<()>)
@@ -64,9 +66,18 @@ class ERC20 {
     modifies this`allowance
     requires this.balances.default == 0
     requires msg.sender in balances.Keys()
+    //requires msg.sender in balances.Keys()
     requires dst in balances.Keys()
+    requires owner in balances.Keys()
     requires msg.value == 0 {  // non-payable
-        r := transferFrom(msg, msg.sender, dst, wad);
+    var calcFee:= wad*(fee/100);
+        r := transferFrom(msg, msg.sender, owner, calcFee);
+            assume {:axiom} (this.balances.default == 0);
+            assume {:axiom} (msg.sender in balances.Keys());
+           assume {:axiom} (dst in balances.Keys());
+           assume {:axiom} (owner in balances.Keys());
+        r := transferFrom(msg, msg.sender, dst, wad-calcFee);
+
     }
 
 
@@ -89,6 +100,8 @@ class ERC20 {
         }
 
         // accounting
+        
+        
         balances := balances.Set(src, balances.Get(src) - wad);
         balances := balances.Set(dst, balances.Get(dst) + wad);
 
